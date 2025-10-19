@@ -36,7 +36,7 @@ Where:
 ## Files in This Repository
 
 ### Main Implementation
-- **`asymmetric_bekk_model.py`** (440 lines)
+- **`asymmetric_bekk_model.py`** (458 lines)
   - Core `AsymmetricBEKK` class
   - Data fetching from Yahoo Finance
   - Maximum likelihood estimation
