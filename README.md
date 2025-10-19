@@ -41,6 +41,16 @@ pip install -r requirements.txt
 
 ## Usage
 
+### Validation
+
+Before running the analysis, validate that everything is set up correctly:
+
+```bash
+python validate.py
+```
+
+This will run a series of tests to ensure all components are working.
+
 ### Quick Start
 
 Run the complete analysis with a single command:
@@ -71,10 +81,12 @@ python data_fetcher.py
 python asymmetric_dcc_garch.py
 ```
 
-**Run BEKK-GARCH Only:**
+**Run Examples:**
 ```bash
-python asymmetric_bekk_garch.py
+python examples.py
 ```
+
+This will demonstrate various usage patterns of the analysis tools.
 
 ## Output Files
 
