@@ -1,0 +1,53 @@
+# R specific
+.Rhistory
+.RData
+.Rproj.user
+*.Rproj
+
+# Output directories
+spillover_results/
+example_results/
+custom_spillover_results/
+my_results/
+exports/
+
+# Data files (optional - uncomment if you want to track data)
+*.csv
+*.rds
+*.RDS
+
+# Plots
+*.png
+*.pdf
+*.jpeg
+*.jpg
+
+# Temporary files
+*.tmp
+*~
+.DS_Store
+Thumbs.db
+
+# RStudio specific
+.Rproj.user/
+
+# Session Data
+.RData
+.Rhistory
+
+# R Environment Variables
+.Renviron
+
+# pkgdown site
+docs/
+
+# knitr and R markdown default cache directories
+*_cache/
+/cache/
+
+# Temporary files created by R markdown
+*.utf8.md
+*.knit.md
+
+# Shiny token
+rsconnect/
