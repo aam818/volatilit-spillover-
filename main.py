@@ -12,6 +12,7 @@ warnings.filterwarnings('ignore')
 from data_fetcher import DataFetcher
 from asymmetric_dcc_garch import AsymmetricDCCGARCH
 from asymmetric_bekk_garch import AsymmetricBEKKGARCH
+import os
 
 
 def print_header(text):
@@ -35,13 +36,23 @@ def main():
     # Step 1: Fetch Data
     print_header("STEP 1: DATA COLLECTION")
     
-    fetcher = DataFetcher(start_date='2019-01-01')  # 5+ years of data
-    prices = fetcher.fetch_data()
-    returns = fetcher.calculate_returns(prices)
+    # Try to fetch real data, fall back to sample data if network issues
+    try:
+        fetcher = DataFetcher(start_date='2019-01-01')  # 5+ years of data
+        prices = fetcher.fetch_data()
+        returns = fetcher.calculate_returns(prices)
+        print("\n✓ Real market data fetched successfully!")
+    except Exception as e:
+        print(f"\n⚠ Could not fetch real data: {e}")
+        print("Generating sample data for demonstration...")
+        from generate_sample_data import generate_sample_data, generate_sample_prices
+        returns = generate_sample_data()
+        prices = generate_sample_prices(returns)
+        print("\n✓ Sample data generated successfully!")
     
     # Save raw data
-    fetcher.save_data(prices, 'prices.csv')
-    fetcher.save_data(returns, 'returns.csv')
+    prices.to_csv('prices.csv')
+    returns.to_csv('returns.csv')
     
     print("\n✓ Data collection completed!")
     

@@ -7,7 +7,6 @@ and DCC for dynamic conditional correlations
 import pandas as pd
 import numpy as np
 from arch import arch_model
-from arch.univariate import GARCH, GJR, ConstantMean, Normal
 import matplotlib.pyplot as plt
 import seaborn as sns
 from scipy import stats
