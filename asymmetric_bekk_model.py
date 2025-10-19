@@ -198,6 +198,23 @@ class AsymmetricBEKK:
         
         return correlations
     
+    def get_parameter_matrices(self):
+        """
+        Get the estimated parameter matrices.
+        
+        Returns:
+        --------
+        tuple
+            (C, A, B, D) - The four parameter matrices:
+            - C: Constant matrix (lower triangular)
+            - A: Shock spillover matrix (ARCH effects)
+            - B: Volatility persistence matrix (GARCH effects)
+            - D: Asymmetric effects matrix (leverage effects)
+        """
+        if self.params is None:
+            raise ValueError("Model must be fitted first")
+        return self._vec_to_matrices(self.params)
+    
     def get_volatility_spillovers(self):
         """Compute volatility spillover indices."""
         C, A, B, D = self._vec_to_matrices(self.params)

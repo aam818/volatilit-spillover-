@@ -122,8 +122,8 @@ print("\n" + "="*80)
 print("STEP 5: RESULTS INTERPRETATION")
 print("="*80)
 
-# Get the estimated matrices
-C, A, B, D = model._vec_to_matrices(model.params)
+# Get the estimated matrices using the public method
+C, A, B, D = model.get_parameter_matrices()
 
 print("\n5.1 SHOCK SPILLOVER MATRIX (A)")
 print("-" * 80)
@@ -209,6 +209,8 @@ print("  • Use real market data with asymmetric_bekk_model.py")
 print("  • Experiment with different time periods")
 print("  • Analyze specific crisis periods")
 print("  • Compare results across different market combinations")
-print("  • Generate visualizations with plot_results()")
+print("\n  • Generate visualizations:")
+print("    from asymmetric_bekk_model import plot_results")
+print("    plot_results(returns, model, save_path='my_results.png')")
 
 print("\n" + "="*80)
