@@ -25,8 +25,9 @@ def example_1_full_analysis():
         fetcher = DataFetcher(start_date='2020-01-01')
         prices = fetcher.fetch_data()
         returns = fetcher.calculate_returns(prices)
-    except:
-        print("\nUsing sample data for demonstration...")
+    except Exception as e:
+        print(f"\nCould not fetch real data: {e}")
+        print("Using sample data for demonstration...")
         returns = generate_sample_data()
         prices = generate_sample_prices(returns)
     
@@ -68,7 +69,7 @@ def example_2_dcc_only():
     # Load or generate data
     try:
         returns = pd.read_csv('returns.csv', index_col=0, parse_dates=True)
-    except:
+    except Exception:
         returns = generate_sample_data()
     
     # Run DCC-GARCH
@@ -100,7 +101,7 @@ def example_3_bekk_only():
     # Load or generate data
     try:
         returns = pd.read_csv('returns.csv', index_col=0, parse_dates=True)
-    except:
+    except Exception:
         returns = generate_sample_data()
     
     # Run BEKK-GARCH

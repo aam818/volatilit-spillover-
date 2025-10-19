@@ -72,7 +72,7 @@ class AsymmetricDCCGARCH:
             print(f"\nResults for {col}:")
             print(res.summary())
             
-        print("\nUnivariatesGARCH models fitted successfully!")
+        print("\nUnivariate GARCH models fitted successfully!")
         
     def estimate_dcc(self):
         """
