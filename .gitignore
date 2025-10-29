@@ -1,0 +1,40 @@
+# R specific
+.Rhistory
+.Rapp.history
+.RData
+.Ruserdata
+*.Rproj
+.Rproj.user/
+
+# Output directory
+output/
+
+# Data files (keep structure, ignore actual data)
+data/*.csv
+data/*.rds
+data/*.xlsx
+data/*.xls
+
+# LaTeX intermediate files
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+
+# OS specific
+.DS_Store
+Thumbs.db
+*~
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# IDE specific
+.vscode/
+.idea/
+*.swp
+*.swo
